@@ -2,7 +2,7 @@
 
 namespace PitcheroWeather\Fixtures;
 
-use PitcheroWeather\Fixtures\Contracts\FixtureTeamInterface;
+use PitcheroWeather\Contracts\FixtureTeamInterface;
 
 class FixtureTeam implements FixtureTeamInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace PitcheroWeather\Fixtures\Contracts;
+namespace PitcheroWeather\Contracts;
 
 interface FixtureTeamInterface
 {

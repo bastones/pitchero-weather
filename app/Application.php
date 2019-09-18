@@ -2,7 +2,7 @@
 
 namespace PitcheroWeather;
 
-use PitcheroWeather\Fixtures\Contracts\FixtureLoaderInterface;
+use PitcheroWeather\Contracts\FixtureLoaderInterface;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 

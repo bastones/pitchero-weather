@@ -2,7 +2,8 @@
 
 namespace PitcheroWeather\Fixtures;
 
-use PitcheroWeather\Fixtures\Contracts\FixtureLocationInterface;
+use PitcheroWeather\Contracts\CoordinatesInterface;
+use PitcheroWeather\Contracts\FixtureLocationInterface;
 
 class FixtureLocation implements FixtureLocationInterface
 {
@@ -12,27 +13,20 @@ class FixtureLocation implements FixtureLocationInterface
     protected $name;
 
     /**
-     * @var float
+     * @var CoordinatesInterface
      */
-    protected $latitude;
-
-    /**
-     * @var float
-     */
-    protected $longitude;
+    protected $coordinates;
 
     /**
      * FixtureLocation constructor.
      *
      * @param string $name
-     * @param float $latitude
-     * @param float $longitude
+     * @param CoordinatesInterface $coordinates
      */
-    public function __construct(string $name, float $latitude, float $longitude)
+    public function __construct(string $name, CoordinatesInterface $coordinates)
     {
         $this->name = $name;
-        $this->latitude = $latitude;
-        $this->longitude = $longitude;
+        $this->coordinates = $coordinates;
     }
 
     /**
@@ -46,22 +40,12 @@ class FixtureLocation implements FixtureLocationInterface
     }
 
     /**
-     * Get the latitude.
+     * Get the coordinates.
      * 
-     * @return float
+     * @return CoordinatesInterface
      */
-    public function getLatitude(): float
+    public function getCoordinates(): CoordinatesInterface
     {
-        return $this->latitude;
-    }
-
-    /**
-     * Get the longitude.
-     *
-     * @return float
-     */
-    public function getLongitude(): float
-    {
-        return $this->longitude;
+        return $this->coordinates;
     }
 }

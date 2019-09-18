@@ -1,16 +1,9 @@
 <?php
 
-namespace PitcheroWeather\Fixtures\Contracts;
+namespace PitcheroWeather\Contracts;
 
-interface FixtureLocationInterface
+interface CoordinatesInterface
 {
-    /**
-     * Get the name.
-     *
-     * @return string
-     */
-    public function getName(): string;
-    
     /**
      * Get the latitude.
      *

@@ -3,7 +3,7 @@
 namespace PitcheroWeather\Fixtures;
 
 use Carbon\Carbon;
-use PitcheroWeather\Fixtures\Contracts\FixtureLoaderInterface;
+use PitcheroWeather\Contracts\FixtureLoaderInterface;
 
 class FixtureLoader implements FixtureLoaderInterface
 {
