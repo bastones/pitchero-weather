@@ -2,7 +2,7 @@
 
 namespace PitcheroWeather\Fixtures\Contracts;
 
-interface FixtureTeamsInterface
+interface FixtureTeamInterface
 {
     /**
      * TeamFixture constructor.

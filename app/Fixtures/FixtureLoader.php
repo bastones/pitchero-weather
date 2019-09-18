@@ -15,12 +15,11 @@ class FixtureLoader implements FixtureLoaderInterface
     public function load(): array
     {
         return array_map(function ($fixture) {
-            $id = $fixture['id'];
-            $teams = new FixtureTeams($fixture['team']['home'], $fixture['team']['away']);
+            $teams = new FixtureTeam($fixture['team']['home'], $fixture['team']['away']);
             $location = new FixtureLocation($fixture['location']['name'], $fixture['location']['lat'], $fixture['location']['lng']);
             $kickoff = new Carbon($fixture['kickoff']);
 
-            return new Fixture($id, $teams, $location, $kickoff);
+            return new Fixture($teams, $location, $kickoff);
         }, $this->getData());
     }
 

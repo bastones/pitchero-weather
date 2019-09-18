@@ -2,9 +2,9 @@
 
 namespace PitcheroWeather\Fixtures;
 
-use PitcheroWeather\Fixtures\Contracts\FixtureTeamsInterface;
+use PitcheroWeather\Fixtures\Contracts\FixtureTeamInterface;
 
-class FixtureTeams implements FixtureTeamsInterface
+class FixtureTeam implements FixtureTeamInterface
 {
     /**
      * @var string

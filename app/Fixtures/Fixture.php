@@ -4,19 +4,14 @@ namespace PitcheroWeather\Fixtures;
 
 use Carbon\CarbonInterface;
 use PitcheroWeather\Fixtures\Contracts\FixtureLocationInterface;
-use PitcheroWeather\Fixtures\Contracts\FixtureTeamsInterface;
+use PitcheroWeather\Fixtures\Contracts\FixtureTeamInterface;
 
 class Fixture
 {
     /**
-     * @var int
+     * @var FixtureTeamInterface
      */
-    protected $id;
-
-    /**
-     * @var FixtureTeamsInterface
-     */
-    protected $teams;
+    protected $team;
 
     /**
      * @var FixtureLocationInterface
@@ -31,37 +26,25 @@ class Fixture
     /**
      * Fixture constructor.
      *
-     * @param int $id
-     * @param FixtureTeamsInterface $teams
+     * @param FixtureTeamInterface $team
      * @param FixtureLocationInterface $location
      * @param CarbonInterface $kickoff
      */
-    public function __construct(int $id, FixtureTeamsInterface $teams, FixtureLocationInterface $location, CarbonInterface $kickoff)
+    public function __construct(FixtureTeamInterface $team, FixtureLocationInterface $location, CarbonInterface $kickoff)
     {
-        $this->id = $id;
-        $this->teams = $teams;
+        $this->team = $team;
         $this->location = $location;
         $this->kickoff = $kickoff;
     }
 
     /**
-     * Get the ID.
+     * Get the team.
      * 
-     * @return int
+     * @return FixtureTeamInterface
      */
-    public function getId()
+    public function getTeam()
     {
-        return $this->id;
-    }
-
-    /**
-     * Get the teams.
-     * 
-     * @return FixtureTeamsInterface
-     */
-    public function getTeams()
-    {
-        return $this->teams;
+        return $this->team;
     }
 
     /**
