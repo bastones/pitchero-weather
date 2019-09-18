@@ -1,0 +1,46 @@
+[
+    {
+        "id": 488856,
+        "homeTeam": "Barnsley",
+        "awayTeam": "Fulham",
+        "kickoff": "15:00",
+        "location": {
+            "name": "Oakwell",
+            "lat": 53.551742,
+            "lng": -1.4703777
+        }
+    },
+    {
+        "id": 413456,
+        "homeTeam": "Brentford",
+        "awayTeam": "Birmingham City",
+        "kickoff": "15:00",
+        "location": {
+            "name": "Griffin Park",
+            "lat": 51.4872912,
+            "lng": -0.3036014
+        }
+    },
+    {
+        "id": 165475623,
+        "homeTeam": "Leeds United",
+        "awayTeam": "Bristol Rovers",
+        "kickoff": "15:00",
+        "location": {
+            "name": "Elland Road",
+            "lat": 53.7778162,
+            "lng": -1.5743333
+        }
+    },
+    {
+        "id": 787474569,
+        "homeTeam": "Swansea City",
+        "awayTeam": "Hull City",
+        "kickoff": "15:00",
+        "location": {
+            "name": "Liberty Stadium",
+            "lat": 51.6427499,
+            "lng": -3.9367742
+        }
+    }
+]

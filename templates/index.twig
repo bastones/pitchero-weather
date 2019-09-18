@@ -1,0 +1,7 @@
+{% extends "frame.twig" %}
+{% block content %}
+    <h3 class="mb-3">Today’s games</h3>
+    {% for fixture in fixtures %}
+        {%  include 'fixture.twig' with {fixture: fixture} %}
+    {% endfor %}
+{% endblock %}
