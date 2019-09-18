@@ -1,5 +1,7 @@
 <?php
 
+namespace PitcheroWeather;
+
 require './vendor/autoload.php';
 
-echo (new \PitcheroWeather\Application(new \PitcheroWeather\FixtureLoader()))->run();
+echo Application::run(new Fixtures\FixtureLoader());

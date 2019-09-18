@@ -1,0 +1,8 @@
+<div class="border py-2 bg-light  mb-3">
+    <div class="row justify-content-md-center text-center">
+        <div class="col-5 themed-grid-col text-right font-weight-bold text-uppercase">{{ fixture.getTeams().getHomeTeam() }}</div>
+        <div class="col-2 themed-grid-col">{{ fixture.getKickoff().format('H:i') }}</div>
+        <div class="col-5 themed-grid-col text-left font-weight-bold text-uppercase">{{ fixture.getTeams().getAwayTeam() }}</div>
+    </div>
+    <div class="text-center font-weight-light">{{ fixture.getLocation().getName() }}</div>
+</div>

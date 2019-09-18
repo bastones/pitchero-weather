@@ -2,31 +2,34 @@
 
 namespace PitcheroWeather;
 
+use PitcheroWeather\Fixtures\Contracts\FixtureLoaderInterface;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 
 class Application
 {
     /**
-     * @var FixtureLoader
+     * Initialise the application.
+     * 
+     * @param FixtureLoaderInterface $fixtures
+     * @return string
      */
-    private $fixtureLoader;
-
-    public function __construct(FixtureLoader $fixtureLoader)
+    public static function run(FixtureLoaderInterface $fixtures)
     {
-        $this->fixtureLoader = $fixtureLoader;
+        return (new static)->getTwigEnvironment()->render('index.twig', [
+            'fixtures' => $fixtures->load()
+        ]);
     }
 
-    public function run(): string
+    /**
+     * Get the Twig environment.
+     * 
+     * @return Environment
+     */
+    protected function getTwigEnvironment(): Environment
     {
-        $twig = $this->initialiseTwig();
-        $fixtures = $this->fixtureLoader->load();
-        return $twig->render('index.twig', ['fixtures' => $fixtures]);
-    }
-
-    private function initialiseTwig(): Environment
-    {
-        $loader = new FilesystemLoader(__DIR__ . '/../templates');
+        $loader = new FilesystemLoader(__DIR__ . '/../resources/templates');
+        
         return new Environment($loader);
     }
 }
