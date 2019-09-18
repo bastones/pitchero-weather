@@ -3,8 +3,8 @@
 namespace PitcheroWeather\Fixtures;
 
 use Carbon\CarbonInterface;
-use PitcheroWeather\Fixtures\Contracts\FixtureLocationInterface;
-use PitcheroWeather\Fixtures\Contracts\FixtureTeamInterface;
+use PitcheroWeather\Contracts\FixtureLocationInterface;
+use PitcheroWeather\Contracts\FixtureTeamInterface;
 
 class Fixture
 {

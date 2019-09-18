@@ -4,6 +4,7 @@ namespace PitcheroWeather\Fixtures;
 
 use Carbon\Carbon;
 use PitcheroWeather\Contracts\FixtureLoaderInterface;
+use PitcheroWeather\Coordinates;
 
 class FixtureLoader implements FixtureLoaderInterface
 {
@@ -16,7 +17,8 @@ class FixtureLoader implements FixtureLoaderInterface
     {
         return array_map(function ($fixture) {
             $teams = new FixtureTeam($fixture['team']['home'], $fixture['team']['away']);
-            $location = new FixtureLocation($fixture['location']['name'], $fixture['location']['lat'], $fixture['location']['lng']);
+            $coordinates = new Coordinates($fixture['location']['lat'], $fixture['location']['lng']);
+            $location = new FixtureLocation($fixture['location']['name'], $coordinates);
             $kickoff = new Carbon($fixture['kickoff']);
 
             return new Fixture($teams, $location, $kickoff);
