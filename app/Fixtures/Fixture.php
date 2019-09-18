@@ -5,6 +5,8 @@ namespace PitcheroWeather\Fixtures;
 use Carbon\CarbonInterface;
 use PitcheroWeather\Contracts\CoordinatesInterface;
 use PitcheroWeather\Contracts\FixtureTeamInterface;
+use PitcheroWeather\Providers\OpenWeatherService;
+use PitcheroWeather\Weather;
 
 class Fixture
 {
@@ -55,13 +57,13 @@ class Fixture
     }
 
     /**
-     * Get the coordinates.
-     * 
-     * @return CoordinatesInterface
+     * Get the weather.
+     *
+     * @return Weather
      */
-    public function getCoordinates(): CoordinatesInterface
+    public function getWeather(): Weather
     {
-        return $this->coordinates;
+        return new OpenWeatherService($this->coordinates);
     }
 
     /**

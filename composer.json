@@ -17,6 +17,7 @@
         "twig/twig": "^2.0",
         "guzzlehttp/guzzle": "~6.0",
         "ext-json": "*",
-        "nesbot/carbon": "^2.24"
+        "nesbot/carbon": "^2.24",
+        "vlucas/phpdotenv": "^3.6"
     }
 }
