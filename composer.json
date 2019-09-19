@@ -19,5 +19,8 @@
         "ext-json": "*",
         "nesbot/carbon": "^2.24",
         "vlucas/phpdotenv": "^3.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
     }
 }
