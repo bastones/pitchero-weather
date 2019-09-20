@@ -1,7 +1,6 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use PitcheroWeather\Contracts\CoordinatesInterface;
 use PitcheroWeather\Coordinates;
 
 final class CoordinatesTest extends TestCase
