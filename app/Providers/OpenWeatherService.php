@@ -10,7 +10,7 @@ class OpenWeatherService extends Weather
     /**
      * Get the current temperature.
      *
-     * @return mixed
+     * @return array|null
      */
     public function getCurrentTemperature()
     {
@@ -35,15 +35,12 @@ class OpenWeatherService extends Weather
             }
         }
 
-        return [
-            'temperature' => null,
-            'icon' => null,
-        ];
+        return null;
     }
 
     /**
      * Get the forecast data.
-     * 
+     *
      * @return \Psr\Http\Message\ResponseInterface
      */
     protected function getForecastData()

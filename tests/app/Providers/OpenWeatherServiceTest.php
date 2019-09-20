@@ -43,17 +43,9 @@ final class OpenWeatherServiceTest extends TestCase
      *
      * @return void
      */
-    public function test_getCurrentTemperature_method_returns_invalid_weather_data_on_failure()
+    public function test_getCurrentTemperature_method_returns_null_on_failure()
     {
-        $data = $this->getClassInstance(null, null, false)->getCurrentTemperature();
-
-        $this->assertIsArray($data);
-        
-        $this->assertArrayHasKey('temperature', $data);
-        $this->assertArrayHasKey('icon', $data);
-        
-        $this->assertNull($data['temperature']);
-        $this->assertNull($data['icon']);
+        $this->assertNull($this->getClassInstance(null, null, false)->getCurrentTemperature());
     }
 
     /**
