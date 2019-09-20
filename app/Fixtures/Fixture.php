@@ -13,7 +13,7 @@ class Fixture
     /**
      * @var string
      */
-    protected $city;
+    protected $location;
     
     /**
      * @var CoordinatesInterface
@@ -33,27 +33,27 @@ class Fixture
     /**
      * Fixture constructor.
      *
-     * @param string $city
+     * @param string $location
      * @param CoordinatesInterface $coordinates
      * @param FixtureTeamInterface $team
      * @param CarbonInterface $kickoff
      */
-    public function __construct(string $city, CoordinatesInterface $coordinates, FixtureTeamInterface $team, CarbonInterface $kickoff)
+    public function __construct(string $location, CoordinatesInterface $coordinates, FixtureTeamInterface $team, CarbonInterface $kickoff)
     {
-        $this->city = $city;
+        $this->location = $location;
         $this->coordinates = $coordinates;
         $this->team = $team;
         $this->kickoff = $kickoff;
     }
 
     /**
-     * Get the city.
+     * Get the location.
      * 
      * @return string
      */
-    public function getCity(): string
+    public function getLocation(): string
     {
-        return $this->city;
+        return $this->location;
     }
 
     /**
