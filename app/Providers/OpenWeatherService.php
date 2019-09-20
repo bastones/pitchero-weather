@@ -24,7 +24,11 @@ class OpenWeatherService extends Weather
 
                 return [
                     'temperature' => round($today->main->temp),
-                    'icon' => "https://openweathermap.org/img/wn/{$today->weather[0]->icon}.png",
+
+                    'icon' => [
+                        'description' => $today->weather[0]->description,
+                        'url' => "https://openweathermap.org/img/wn/{$today->weather[0]->icon}.png",
+                    ],
                 ];
             } catch (Exception $e) {
                 //

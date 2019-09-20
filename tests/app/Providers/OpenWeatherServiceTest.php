@@ -27,12 +27,15 @@ final class OpenWeatherServiceTest extends TestCase
         $data = $this->getClassInstance()->getCurrentTemperature();
 
         $this->assertIsArray($data);
+        $this->assertIsArray($data['icon']);
         
         $this->assertArrayHasKey('temperature', $data);
         $this->assertArrayHasKey('icon', $data);
+
+        $this->assertArrayHasKey('description', $data['icon']);
+        $this->assertArrayHasKey('url', $data['icon']);
         
         $this->assertIsFloat($data['temperature']);
-        $this->assertIsString($data['icon']);
     }
 
     /**
@@ -147,6 +150,7 @@ final class FakeWeatherService extends OpenWeatherService
                                 ],
 
                                 'weather' => [[
+                                    'description' => 'sunny',
                                     'icon' => 'test.png',
                                 ]],
                             ]],
