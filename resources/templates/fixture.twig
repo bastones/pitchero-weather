@@ -1,8 +1,35 @@
-<div class="border py-2 bg-light  mb-3">
+<div class="border py-2 bg-light text-center mb-3">
     <div class="row justify-content-md-center text-center">
-        <div class="col-5 themed-grid-col text-right font-weight-bold text-uppercase">{{ fixture.getTeam().getHomeTeam() }}</div>
-        <div class="col-2 themed-grid-col">{{ fixture.getKickoff().format('H:i') }}</div>
-        <div class="col-5 themed-grid-col text-left font-weight-bold text-uppercase">{{ fixture.getTeam().getAwayTeam() }}</div>
+        <div class="col-5 themed-grid-col text-right font-weight-bold text-uppercase">
+            {{ fixture.getTeam().getHomeTeam() }}
+        </div>
+
+        <div class="col-2 themed-grid-col">
+            {{ fixture.getKickoff().format('H:i') }}
+        </div>
+
+        <div class="col-5 themed-grid-col text-left font-weight-bold text-uppercase">
+            {{ fixture.getTeam().getAwayTeam() }}
+        </div>
     </div>
-    <div class="text-center font-weight-light">{{ fixture.getLocation() }}</div>
+
+    <div class="font-weight-light">
+        {{ fixture.getLocation() }}
+    </div>
+
+    {% if fixture.getWeather().getCurrentTemperature() is not null %}
+        <div class="d-inline-flex mt-2 align-items-center font-weight-bold">
+            <img
+                src="{{ fixture.getWeather().getCurrentTemperature()['icon']['url'] }}"
+                alt="{{ fixture.getWeather().getCurrentTemperature()['icon']['description'] }}"
+                class="mr-1"
+                width="30"
+                height="30"
+            >
+
+            <span>
+                {{ fixture.getWeather().getCurrentTemperature()['temperature'] }} &deg;C
+            </span>
+        </div>
+    {% endif %}
 </div>
